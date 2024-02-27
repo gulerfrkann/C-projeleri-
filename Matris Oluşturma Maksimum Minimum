@@ -1,0 +1,76 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define A 3
+#define B 2
+
+void init_tablo(int furkan[A][B])
+{
+   int i,j;
+   printf("%d  *  %d boyutunda bir matris giriniz\n",A,B);
+   for(i=0;i<A;i++)
+   {
+       for(j=0;j<B;j++)
+       {
+           scanf("%d",&furkan[i][j]);
+       }
+   }
+}
+void print_tablo(int furkan[A][B])
+{
+    int i,j;
+    printf("Tablomuz su sekilde gorunmektedir\n");
+    for(i=0;i<A;i++)
+    {
+        for(j=0;j<B;j++)
+        {
+            printf("%4d",furkan[i][j]);
+        }
+        printf("\n");
+
+    }
+}
+void calcul (int furkan[A][B],int *max,int *min,int * toplam)
+
+{
+    int i,j;
+    *max=furkan[0][0];
+    *min=furkan[0][0];
+    *toplam=0;
+    for(i=0;i<A;i++)
+    {
+        for(j=0;j<B;j++)
+        {
+            if(furkan[i][j]>*max)
+            {
+                *max=furkan[i][j];
+            }
+            if(furkan[i][j]<*min)
+            {
+                *min=furkan[i][j];
+            }
+            *toplam=*toplam+furkan[i][j];
+        }
+    }
+
+}
+
+
+
+
+
+
+
+int main()
+{
+    int min,max,toplam;
+    int furkan[A][B];
+    init_tablo(furkan);
+    print_tablo(furkan);
+    calcul(furkan,&max,&min,&toplam);
+    printf("Maximum degerimiz : %d\n",max);
+    printf("Minumum degerimiz : %d\n",min);
+    printf("Toplam degerimiz : %d",toplam);
+
+
+    return 0;
+}
