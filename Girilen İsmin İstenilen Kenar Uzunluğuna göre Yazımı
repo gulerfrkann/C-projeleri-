@@ -1,0 +1,30 @@
+int kenar; char isim[100] ="FURKANGULER";
+	int  a,b,c,d;
+ 	printf("5 ile 15 arası bir kenar uzunlugunu giriniz:");
+	scanf("%d",&kenar);
+	if(kenar<15 && kenar>5)
+	{
+		char matris[kenar][kenar];
+
+			for(a=0;a<kenar;a++)
+			{
+				for(b=0;b<kenar;b++)
+				{
+					if(d<strlen(isim))
+					{
+					matris[b][a]=isim[d];
+					printf("  %c",matris[b][a]);
+					d++;
+					}
+					else
+					{
+						d=0;
+					}
+				}
+				printf("\n");
+			}
+
+	}
+
+	else
+		printf("5 ile 15 arasi bir sayi giriniz");
